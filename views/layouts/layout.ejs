@@ -1,0 +1,54 @@
+<!doctype html>
+
+
+<html>
+
+
+
+<head>
+  <link rel="stylesheet" href="/styles/importer.less">
+  <script src="/dependencies/sails.io.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+
+<body class=" pl-4 pr-4 pb-4">
+  <header class="pl-3 pr-3 mb-4">
+    <nav class="navbar navbar-expand navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/search">Search</a></li>
+          <li class="nav-item"><a class="nav-link" href="/create">Create</a></li>
+          <li class="nav-item"><a class="nav-link" href="/admin">Admin</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="pb-5 pt-5 pl-3 pr-3  bg-silver text-dark">
+      <h1 class="text-dark">Event Management System</h1>
+      <p class="text-dark">HKBU Event Management System is a web-based system for department and student societies to
+        broadcast events
+        and
+        activities as well as registration.</p>
+
+    </div>
+  </header>
+
+    <!----<div class="card bg-light text-dark">
+      <div class="card-body">
+        <h1 class="card-title">Event Management System</h1>
+        <p class="card-text">HKBU Event Management System is a web-based system for department and student societies to
+          broadcast events
+          and
+          activities as well as registration.</p>
+      </div>
+    </div>-->
+
+    <%- body %>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<div class="row">
+    <% events.forEach(function(model){ 
+                if(model.highlight != ""){
+            %>
+    <div class="card text-dark col-6 col-md-6  col-sm-6">
+        <div class="card-body">
+            <a href="/detail/<%=model.id %>">
+                <h4 class="card-title blue">
+                    <%=model.name %>
+                </h4>
+            </a>
+            <p class="card-text">
+                <div class="row justify-content-start">
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-5 col-sm-12">
+                        <img width="150" height="200" class="rounded float-left" src="<%=model.url %>" />
+                    </div>
+                    <div class="col-12 col-md-6   col-xl-8 col-lg-7 col-sm-12">
+                        <%=model.shortdesp %>
+                    </div>
+
+                </div>
+            </p>
+        </div>
+    </div>
+    <%}}); %>
+</div>

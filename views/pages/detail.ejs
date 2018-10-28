@@ -1,0 +1,46 @@
+<div class="row">
+
+    <div class="card text-dark col-12 col-md-12  col-sm-12">
+        <div class="card-body">
+            <h2 class="card-title black">
+                <%=event.name %>
+            </h2>
+            <p class="card-text">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-5 col-sm-12">
+                        <img width="350" height="500" class="rounded float-left" src="<%=event.url %>" />
+                    </div>
+                    <div class="col-12 col-md-6   col-xl-8 col-lg-7 col-sm-12">
+                        <div class=" card rounded-0 p-2">
+                            <%=event.fulldesp %>
+                        </div>
+                        <div class="card rounded-0 p-2">
+                            <p class="card-text"><span class="font-weight-bold">Organizer:</span>
+                                <%=event.dept %>
+                            </p>
+                        </div>
+                        <div class="card rounded-0 p-2">
+                            <p class="card-text"><span class="font-weight-bold">Date:</span>
+                                <%=event.date %>
+                            </p>
+                        </div>
+                        <div class="card rounded-0 p-2">
+                            <p class="card-text"><span class="font-weight-bold">Time:</span>
+                                <%=event.time %>
+                            </p>
+                        </div>
+                        <div class="card rounded-0 p-2">
+                            <p class="card-text"><span class="font-weight-bold">Venue:</span>
+                                <%=event.venue %>
+                            </p>
+                        </div>
+                        <div class="card rounded-0 p-2">
+                            <p class="card-text "><span class="font-weight-bold">Quota:</span>
+                                <%=event.quota %>
+                            </p>
+                        </div>
+                    </div>
+            </p>
+        </div>
+    </div>
+</div>

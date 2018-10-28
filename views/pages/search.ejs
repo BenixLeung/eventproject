@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-8">
+        <form class="card card-sm" action="/search/event" method="get">
+            <div class="card-body row no-gutters align-items-center">
+                <div class="col-auto">
+                    <i class="fas fa-search h4 text-body"></i>
+                </div>
+                <!--end of col-->
+                <div class="col">
+                    <input name="keyword" class="form-control form-control-lg form-control-borderless" type="text"
+                        placeholder="Keyword">
+                </div>
+                <!--end of col-->
+                <div class="col-auto">
+                    <input type="submit" class="btn btn-lg btn-info" value="Search" />
+                </div>
+                <!--end of col-->
+            </div>
+        </form>
+    </div>
+    <!--end of col-->
+</div>
+<div class="row">
+    <% 
+        if(typeof events !='undefined' ){
+        events.forEach(function(model){ 
+                    
+                %>
+    <div class="mt-2 card text-dark col-12 col-md-12  col-sm-12">
+        <div class="card-body">
+            <a href="/detail/<%=model.id %>">
+                <h4 class="card-title blue">
+                    <%=model.name %>
+                </h4>
+            </a>
+            <p class="card-text">
+                <div class="row justify-content-start">
+                    <div class="col-12 col-md-6 col-xl-4 col-lg-5 col-sm-12">
+                        <img width="150" height="200" class="rounded float-left" src="<%=model.url %>" />
+                    </div>
+                    <div class="col-12 col-md-6   col-xl-8 col-lg-7 col-sm-12">
+                        <%=model.shortdesp %>
+                    </div>
+
+                </div>
+            </p>
+        </div>
+    </div>
+    <%});} %>
+</div>

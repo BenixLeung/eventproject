@@ -1,0 +1,91 @@
+<body>
+
+    <div class="block_style1">
+        <form action="/create" method="post">
+            <div class="row">
+                <div class=" text-dark col-6 col-md-6  col-sm-6">
+                    <div class="form-group">
+                        <label>Event Name:</label>
+                        <input type="text" class="form-control form-control-sm" value="<% if(typeof event != 'undefined'){ %><%=event.name%><% } %>"
+                            name="Event[name]" />
+                    </div>
+                    <label>Short Description:</label>
+                    <br />
+                    <textarea rows="7" class="form-control form-control-sm" cols="60" name="Event[shortdesp]"><% if(typeof event != 'undefined'){ %><%=event.shortdesp%><% } %></textarea>
+                    <div class="form-group">
+                        <label>Full Description:</label>
+                        <textarea class="form-control form-control-sm" rows="10" cols="60" name="Event[fulldesp]"><% if(typeof event != 'undefined'){ %><%=event.fulldesp%><% } %></textarea>
+                    </div>
+                </div>
+                <div class=" text-dark col-6 col-md-6  col-sm-6">
+                    <div class="form-group">
+                        <label>Image URL:</label>
+                        <input type="text" class="form-control form-control-sm" value="<% if(typeof event != 'undefined'){ %><%=event.url%><% } %>"
+                            name="Event[url]" />
+                    </div>
+                    <div class="form-group">
+                        <label>Organizer:</label>
+                        <select name="Event[dept]" class="form-control form-control-sm">
+                            <option value="" selected disabled>Please pick one</option>
+                            <option <% if(typeof event !='undefined' ){ if(event.dept=='Department of Music' ){ %>
+                                <%='selected'%>
+                                <% }} %> value='Department of Music'>Department of Music</option>
+                            <option <% if(typeof event !='undefined' ){ if(event.dept=='Department of Computer Science'
+                                ){ %>
+                                <%='selected'%>
+                                <% }} %> v alue='Department of Computer Science'>Department of Computer Science</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Event Date</label>
+                        <input type="date" class="form-control form-control-sm" value="<% if(typeof event != 'undefined'){ %><%=event.date%><% } %>"
+                            name="Event[date]" />
+                    </div>
+                    <div class="form-group">
+                        <label>Event Time</label>
+                        <input type="text" class="form-control form-control-sm" value="<% if(typeof event != 'undefined'){ %><%=event.time%><% } %>"
+                            name="Event[time]" />
+                    </div>
+                    <div class="form-group">
+                        <label>Venue:</label>
+
+                        <select name="Event[venue]" class="form-control form-control-sm">
+                            <option value="" selected disabled>Please pick one</option>
+                            <option <% if(typeof event !='undefined' ){ if(event.venue=='Hall' ){ %>
+                                <%='selected'%>
+                                <% }} %> value="Hall">Hall</option>
+                            <option <% if(typeof event !='undefined' ){ if(event.venue=='LT1' ){ %>
+                                <%='selected'%>
+                                <% }} %> value="LT1">LT1</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Quota</label>
+                        <input type="number" class="form-control form-control-sm" value="<% if(typeof event != 'undefined'){ %><%=event.quota%><% } %>"
+                            name="Event[quota]" />
+                    </div>
+                    <div class="form-check mb-1">
+                        <input type="checkbox" class="form-check-input" <% if(typeof event !='undefined' ){
+                            if(event.highlight !='' ){ %>
+                        <%='checked'%>
+                        <% }} %> name="Event[highlight]" value="highlight" /> <label class="form-check-label">Highlighted
+                            Event </label>
+
+                    </div>
+                    <input type="hidden" name="Event[updateid]" value="<% if(typeof event !='undefined' ){  %>
+                <%=event.id%>
+                <% }%>" />
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit" />
+                    </div>
+                </div>
+            </div>
+        </form>
+        <form action="/create/delete/<%if(typeof event !='undefined' ){ %><%=event.id%><%}%>" method="post">
+            <input type="submit" class="btn btn-danger" value="Delete" />
+        </form>
+    </div>
+
+
+</body>
